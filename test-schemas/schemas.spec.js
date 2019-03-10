@@ -4,7 +4,7 @@ const ajv = require('./ajv');
 const util = require('./util');
 
 
-describe('schema and examples', () => {
+describe('schemas and examples', () => {
   const folders = util.getFolders();
 
   for (const folder of folders) {
