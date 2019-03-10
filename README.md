@@ -40,6 +40,8 @@ If you have problems or ideas about using JSON Schema, please submit an issue to
 
 We would greatly appreciate if you could submit the schemas that you use in real life (without any confidential information) and, optionally, example(s) that are valid against your schema.
 
+Please submit a PR with the schema (and a valid example, if you have it) in a separate folder inside [real-schemas](https://github.com/epoberezkin/json-schema-usage-problems/tree/master/real-schemas) using one of the provided templates - you can use JSON, YAML of JavaScript.
+
 
 ## References
 
