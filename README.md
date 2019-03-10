@@ -2,6 +2,8 @@
 
 Public forum to collect real world schemas and to discuss JSON Schema specification problems
 
+[![Build Status](https://travis-ci.org/epoberezkin/json-schema-usage-problems.svg?branch=master)](https://travis-ci.org/epoberezkin/json-schema-usage-problems)
+
 
 ## Problems
 
