@@ -7,7 +7,7 @@ Public forum to collect real world schemas and to discuss JSON Schema specificat
 
 For JSON Schema authors and users, particularly those who are just starting to use JSON Schema, the specification is quite confusing. Validators, while complying with the spec, often produce the results that surprise users - ignored unknown keywords, type is not enforced, properties are optional, etc.
 
-For validator maintainers, the current draft-07 of the JSON Schema specification is already quite difficult to implement ([See test of compliance of JS validators with the specification][1]). The upcoming draft-08 includes additional features that further increase implementation complexity.
+For validator maintainers, the current draft-07 of the JSON Schema specification is already quite difficult to implement (See [Test of compliance of JS validators with the specification][1]). The upcoming draft-08 includes additional features that further increase implementation complexity.
 
 For tool maintainers, JSON Schema presents further challenges that have been partially addressed in OpenAPI version of the specification, but having two different versions of JSON Schema also creates additional problems for the users.
 
@@ -44,6 +44,8 @@ Please submit a PR with the schema (and a valid example, if you have it) in a se
 
 
 ## References
+
+[Test of compliance of JS validators with the specification][1]
 
 [1]: https://github.com/epoberezkin/test-validators "All JS validators do not comply with the spec"
 
