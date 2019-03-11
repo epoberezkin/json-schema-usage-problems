@@ -1,0 +1,18 @@
+{
+  "name": "json-schema-usage-problems",
+  "version": "0.0.1",
+  "description": "JSON Schema usage and problems",
+  "main": "index.js",
+  "repository": "git@github.com:epoberezkin/json-schema-usage-problems.git",
+  "author": "Evgeny Poberezkin <e.poberezkin@me.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha test-schemas/*.spec.js -R spec"
+  },
+  "dependencies": {
+    "ajv": "^6.10.0",
+    "glob": "^7.1.3",
+    "js-yaml": "^3.12.2",
+    "mocha": "^6.0.2"
+  }
+}
