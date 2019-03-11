@@ -1,5 +1,5 @@
 const Ajv = require('ajv');
-ajv = new Ajv({
+const ajv = new Ajv({
   schemaId: 'auto',
   addUsedSchema: false,
   unknownFormats: 'ignore',
