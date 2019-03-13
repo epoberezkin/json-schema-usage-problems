@@ -33,15 +33,9 @@ If you have problems or ideas about using JSON Schema, please submit an issue to
 
 We would greatly appreciate if you could submit the schemas that you use in real life (without any confidential information) and, optionally, an example that is valid against your schema.
 
-Please submit a PR with the schema (and a valid example, if you have it) by creating a new folder in inside the [`real-schemas`][2] directory of this repo. You can use JSON, YAML, or JavaScript.
+Please submit a PR with the schema (and a valid example, if you have it) by creating a new folder in inside the [`real-schemas`][1] directory of this repo. You can use JSON, YAML, or JavaScript.
 
-[2]: https://github.com/epoberezkin/json-schema-usage-problems/tree/master/real-schemas
-
-## References
-
-[Test of compliance of JS validators with the specification][1]
-
-[1]: https://github.com/epoberezkin/test-validators "All JS validators do not comply with the spec"
+[1]: https://github.com/epoberezkin/json-schema-usage-problems/tree/master/real-schemas
 
 
 ## License
