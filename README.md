@@ -1,49 +1,41 @@
 # JSON Schema usage and problems
 
-Public forum to collect real world schemas and to discuss JSON Schema specification problems
-
 [![Build Status](https://travis-ci.org/epoberezkin/json-schema-usage-problems.svg?branch=master)](https://travis-ci.org/epoberezkin/json-schema-usage-problems)
 
-
-## Problems
-
-For JSON Schema authors and users, particularly those who are just starting to use JSON Schema, the specification is quite confusing. Validators, while complying with the spec, often produce the results that surprise users - ignored unknown keywords, type is not enforced, properties are optional, etc.
-
-For validator maintainers, the current draft-07 of the JSON Schema specification is already quite difficult to implement (See [Test of compliance of JS validators with the specification][1]). The upcoming draft-08 includes additional features that further increase implementation complexity.
-
-For tool maintainers, JSON Schema presents further challenges that have been partially addressed in OpenAPI version of the specification, but having two different versions of JSON Schema also creates additional problems for the users.
+A public forum for collecting real-world schemas and discussing problems with the JSON Schema specification.
 
 
 ## Objective
 
-This repository objective is to have a dialogue about what JSON schemas - schemas for JSON documents - look like in real life and how JSON Schema specification could change to be easier to adopt and use and to become an IETF standard - a requirement for enterprise adoption.
+The objective of this repo is to have a dialogue about what JSON Schemas -- schemas for JSON documents -- look like in real life, and how the JSON Schema spec could improve.
 
-We would like to get input from all JSON Schema users:
-- schema users
-- schema authors
-- tool maintainers (forms, code-generation, etc.)
-- validator maintainers
+We would like to get input from the entire JSON Schema community:
+
+- Schema users
+- Schema authors
+- Tool maintainers (forms, code-generation, etc.)
+- Validator maintainers
 - OpenAPI specification maintainers
 
 We would like to learn:
-- what specific schemas you use in real life - the objective is to collect 100+ of real world schemas, both used in other standards, libraries and in real life applications.
-- what all JSON Schema users see as the specification problems.
-- what solutions could solve these problems.
 
+- What specific schemas you use in real life -- the objective is to collect 100+ real-world schemas used in libraries, applications, or other standards.
+- What JSON Schema users see as problems with the current specification.
+- What changes to JSON Schema could resolve these problems.
 
 ## We need your help
 
-#### Submit your problems
+### Submit your problems
 
-If you have problems or ideas about using JSON Schema, please submit an issue to this repository explaining both the issue and what you think is the right solution. Ideally, it would be an issue related to the problem of the specification itself, rather than any specific library that implements JSON Schema, but if you are not sure - please submit it anyway.
+If you have problems or ideas about using JSON Schema, please submit an issue to this repository explaining both the issue and what you think is the right solution.
 
+### Submit your schemas
 
-#### Submit your schemas
+We would greatly appreciate if you could submit the schemas that you use in real life (without any confidential information) and, optionally, an example that is valid against your schema.
 
-We would greatly appreciate if you could submit the schemas that you use in real life (without any confidential information) and, optionally, example(s) that are valid against your schema.
+Please submit a PR with the schema (and a valid example, if you have it) by creating a new folder in inside the [`real-schemas`][2] directory of this repo. You can use JSON, YAML, or JavaScript.
 
-Please submit a PR with the schema (and a valid example, if you have it) in a separate folder inside [real-schemas](https://github.com/epoberezkin/json-schema-usage-problems/tree/master/real-schemas) using one of the provided templates - you can use JSON, YAML of JavaScript.
-
+[2]: https://github.com/epoberezkin/json-schema-usage-problems/tree/master/real-schemas
 
 ## References
 
