@@ -22,7 +22,8 @@ module.exports = {
 
 function getData(folder, name) {
   files = glob.sync(`${folder}/${name}.*`, {});
-  if (files.length !== 1) throw new Error(`only one ${name}.* file is expected in folder ${folder}`);
+  if (files.length > 1) throw new Error(`only one ${name}.* file is expected in folder ${folder}`);
+  if (files.length == 0) return;
   const file = files[0];
   const ext = path.extname(file);
   switch (ext) {
