@@ -6,8 +6,7 @@ const fs = require('fs');
 
 module.exports = {
   getFolders() {
-    return glob.sync('./real-schemas/{.,}*', {})
-            .filter(f => path.basename(f) !== 'README.md');
+    return glob.sync('./real-schemas/{.,}*/', {});
   },
 
   getSchema(folder) {
