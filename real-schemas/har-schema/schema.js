@@ -1,6 +1,4 @@
 module.exports = {
-  $id: 'https://github.com/ahmadnassri/har-schema/tree/master/lib',
-  title: 'HTTP Archive (HAR) schema',
   definitions: {
     afterRequest: require('./afterRequest.json'),
     beforeRequest: require('./beforeRequest.json'),

@@ -2,6 +2,7 @@ const glob = require('glob');
 const yaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
+const ajv = require('./ajv');
 
 
 module.exports = {
@@ -9,13 +10,24 @@ module.exports = {
     return glob.sync('./real-schemas/{.,}*/', {});
   },
 
-  getSchema(folder) {
-    return getData(folder, 'schema');
+  getFiles(folder) {
+    return {
+      schema: getData(folder, 'schema'),
+      example: getData(folder, 'example'),
+      info: getData(folder, '_info')
+    }
   },
 
-  getExample(folder) {
-    return getData(folder, 'example');
+  getTitle(schema, info) {
+    return (info && info.title) || schema.title ||
+           (info && info.$id) || schema.$id || schema.id || '';
   },
+
+  validateInfo: ajv.compile({
+    type: 'object',
+    propertyNames: {enum: ['$id', 'title', 'language', 'validator']},
+    additionalProperties: {type: 'string'}
+  }),
 };
 
 

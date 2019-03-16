@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/epoberezkin/json-schema-usage-problems/tree/master/real-schemas/.template.json",
+  "title": "Sample JSON Schema",
+  "language": "javascript'",
+  "validator": "abc"
+}

@@ -62,7 +62,6 @@ const topLevelConfigProperties = Object.assign(
 );
 
 const configSchema = {
-    $id: "https://github.com/eslint/eslint/blob/master/conf/config-schema.js",
     type: "object",
     properties: topLevelConfigProperties,
     additionalProperties: false
