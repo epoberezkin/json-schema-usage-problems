@@ -8,14 +8,24 @@ describe('schemas and examples', () => {
   const folders = util.getFolders();
 
   for (const folder of folders) {
-    const schema = util.getSchema(folder);
-    const example = util.getExample(folder);
-    const title = schema.title || schema.$id || schema.id || '';
+    const {schema, example, info} = util.getFiles(folder);
+    const title = util.getTitle(schema, info);
 
-    it(`${path.basename(folder)}: ${title}`, () => {
-      assert.strictEqual(ajv.validateSchema(schema), true);
+    describe(`${path.basename(folder)}: ${title}`, () => {
+      it('schema', () => {
+        assert.strictEqual(ajv.validateSchema(schema), true);
+      });
+
       if (example) {
-        assert.strictEqual(ajv.validate(schema, example), true);
+        it('example', () => {
+          assert.strictEqual(ajv.validate(schema, example), true);
+        });
+      }
+
+      if (info) {
+        it ('info', () => {
+          assert.strictEqual(util.validateInfo(info), true);
+        });
       }
     });
   }
