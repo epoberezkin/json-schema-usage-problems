@@ -9,6 +9,7 @@ const USAGE = {
   boolSchema: 'boolean schema',
   patternPropsAndProps: 'patternProperties and properties',
   additionalPropsSchema: 'additionalProperties is schema',
+  additionalPropsSchemaAndProps: 'additionalProperties schema and properties',
   itemsArray: 'items is array of schemas'
 };
 
@@ -34,6 +35,9 @@ for (const folder of folders) {
 
     if (typeof sch.additionalProperties === 'object') {
       incrementFreq('usage', USAGE.additionalPropsSchema);
+      if (sch.properties) {
+        incrementFreq('usage', USAGE.additionalPropsSchemaAndProps);
+      }
     }
 
     if (Array.isArray(sch.items)) {
@@ -51,8 +55,7 @@ console.log(stats);
 
 function setUsageStats() {
   for (const name in USAGE) {
-    const stat = getStat('usage', USAGE[name]);
-    stat.counts.usage = 0;
+    getStat('usage', USAGE[name]);
   }
 }
 
