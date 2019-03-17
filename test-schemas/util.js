@@ -2,27 +2,39 @@ const glob = require('glob');
 const yaml = require('js-yaml');
 const path = require('path');
 const fs = require('fs');
+const ajv = require('./ajv');
 
 
 module.exports = {
   getFolders() {
-    return glob.sync('./real-schemas/{.,}*', {})
-            .filter(f => path.basename(f) !== 'README.md');
+    return glob.sync('./real-schemas/{.,}*/', {});
   },
 
-  getSchema(folder) {
-    return getData(folder, 'schema');
+  getFiles(folder) {
+    return {
+      schema: getData(folder, 'schema'),
+      example: getData(folder, 'example'),
+      info: getData(folder, '_info')
+    }
   },
 
-  getExample(folder) {
-    return getData(folder, 'example');
+  getTitle(schema, info) {
+    return (info && info.title) || schema.title ||
+           (info && info.$id) || schema.$id || schema.id || '';
   },
+
+  validateInfo: ajv.compile({
+    type: 'object',
+    propertyNames: {enum: ['$id', 'title', 'language', 'validator']},
+    additionalProperties: {type: 'string'}
+  }),
 };
 
 
 function getData(folder, name) {
   files = glob.sync(`${folder}/${name}.*`, {});
-  if (files.length !== 1) throw new Error(`only one ${name}.* file is expected in folder ${folder}`);
+  if (files.length > 1) throw new Error(`only one ${name}.* file is expected in folder ${folder}`);
+  if (files.length == 0) return;
   const file = files[0];
   const ext = path.extname(file);
   switch (ext) {
