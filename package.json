@@ -7,7 +7,8 @@
   "author": "Evgeny Poberezkin <e.poberezkin@me.com>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha test-schemas/*.spec.js -R spec"
+    "test": "mocha test-schemas/*.spec.js -R spec",
+    "analyse": "node test-schemas/analyse.js"
   },
   "dependencies": {
     "ajv": "^6.10.0",
